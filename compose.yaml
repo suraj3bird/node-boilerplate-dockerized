@@ -1,0 +1,35 @@
+services:
+  api:
+    container_name: node_app_container
+    build: .
+    image: api
+    ports:
+      - 8000:8000
+    expose:
+      - 8000
+    depends_on:
+      - db
+      #  condition: service_completed_successfully
+    networks:
+      - internalnet
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    # env_file:
+    #   - .env-prod
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=ledgera
+      - MYSQL_ROOT_PASSWORD=3B!rd@root123
+    ports:
+      - '3307:3306'
+    expose:
+      - 3306
+    networks:
+      - internalnet
+networks:
+  internalnet:
+    driver: bridge
+volumes:
+  db-data:
