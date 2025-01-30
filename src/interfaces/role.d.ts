@@ -1,10 +1,10 @@
 import {
+  TEACHER_ROLE,
   ADMIN_ROLE,
-  SUPERADMIN_ROLE,
-  USER_ROLE
+  STUDENT_ROLE
 } from "@constants/role.constant";
 
 export type IRole =
-  | typeof SUPERADMIN_ROLE
   | typeof ADMIN_ROLE
-  | typeof USER_ROLE;
+  | typeof STUDENT_ROLE
+  | typeof TEACHER_ROLE;

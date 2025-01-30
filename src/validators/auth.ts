@@ -24,7 +24,7 @@ const authValidator = {
       .normalizeEmail(),
     body("password")
       .isLength({ min: 8 })
-      .withMessage("Password is minimum 8 chars long."),
+      .withMessage("Password is minimum 8 chars long.")
   ],
   login: [
     body("email")
@@ -33,8 +33,8 @@ const authValidator = {
       .normalizeEmail(),
     body("password")
       .isLength({ min: 8 })
-      .withMessage("Password is minimum 8 chars long."),
-  ],
+      .withMessage("Password is minimum 8 chars long.")
+  ]
 };
 
 export default authValidator;

@@ -17,8 +17,16 @@ const config = {
       process.env.ORIGIN_REGEX || "https?://([a-z0-9]+[.])*domainname[.]com",
     allowedOrigins:
       process.env.ALLOWED_ORIGIN ||
-      "http://localhost:3000,http://localhost:4000,http://localhost:9000,https://domainname.com",
-    morganLevel: process.env.MORGAN_LEVEL || "dev"
+      "http://localhost:3000,http://localhost:3001,http://localhost:9000,https://domainname.com",
+    morganLevel: process.env.MORGAN_LEVEL || "dev",
+    auth0: {
+      secret: process.env.AUTH0_SECRET,
+      baseUrl: process.env.AUTH0_BASE_URL,
+      clientId: process.env.AUTH0_CLIENT_ID,
+      issuerBaseUrl: process.env.AUTH0_ISSUER,
+      apiIdentifier: process.env.API_IDENTIFIER,
+      logoutUrl: process.env.AUTH0_LOGOUT_URL
+    }
   },
   upload: {
     maxSize: process.env.MAX_IMG_SIZE || "2"
@@ -40,8 +48,7 @@ const config = {
   db: {
     dbType: process.env.DATABASE_TYPE || "mysql",
     mysql_uri:
-      process.env.MYSQL_URI ||
-      "mysql://root:3Birdadmin123@db:3306/ledgra",
+      process.env.MYSQL_URI || "mysql://root:3Birdadmin123@db:3306/ledgra",
     mongo_uri:
       process.env.MONGO_URI ||
       `mongodb://localhost/${process.env.APP_NAME || "app_name"}`,

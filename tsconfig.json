@@ -12,6 +12,7 @@
     "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true,
     "typeRoots": ["./node_modules/@types", "./interfaces", "src/@types"],
+    "types": ["node", "express", "express-openid-connect"],
     "baseUrl": "./",
     "resolveJsonModule": true,
     "paths": {
@@ -27,7 +28,7 @@
       "@services/*": ["src/services/*"],
       "@utils/*": ["src/utils/*"],
       "@misc/*": ["src/misc/*"],
-      "@prisma/*": ["prisma/*"],
+      "@prisma/*": ["prisma/*"]
     }
   },
   "ts-node": {

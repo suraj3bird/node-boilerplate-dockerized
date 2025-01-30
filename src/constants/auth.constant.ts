@@ -3,8 +3,15 @@ export const errorAuth = {
     alreadyExist: {
       //given credentials not exist
       detail: {
-        msg: "User with given email already exists",
-        status: 401
+        msg: "Invalid sign up",
+        status: 409
+      }
+    },
+    invalid: {
+      //given credentials not exist
+      detail: {
+        msg: "Invalid email or password credentials",
+        status: 409
       }
     }
   }
@@ -23,7 +30,7 @@ export const successAuth = {
 
 export const tokenError = {
   invalid: {
-    msg: "Invalid token type",
+    msg: "Invalid or missing token type",
     status: 401
   },
   notFound: {
